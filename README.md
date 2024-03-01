@@ -271,6 +271,19 @@ def register_user():
 Now you can check it with postman api tool
 https://www.postman.com/
 
+noy if you run the app on port 8000 with this command
+```
+flask run --debug --port 8000
+```
+the example addresses below work.
+The default port is 5000 for flask.
+
+if you just type 
+```
+flask run --debug
+```
+change the port adress to 5000
+
 Here is my screenshots with this example project
 
 
