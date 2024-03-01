@@ -39,8 +39,10 @@ from flask_sqlalchemy import SQLAlchemy
 These variables below needs to be changed and stored in .env file
 and .env should be in .gitignore list so they are not checked into git
 Then the variables could be loaded into app with the code below:
+
 import os
-from dotenv import load_dotenv
+from dotenv
+import load_dotenv
 load_dotenv()
 
 To create your own JWT_SECRET_KEY you can open up terminal and type ..
