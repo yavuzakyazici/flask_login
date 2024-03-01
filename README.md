@@ -45,9 +45,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 To create your own JWT_SECRET_KEY you can open up terminal and type ..
-openssl rand -hex 32 on 01 dec 2023
+openssl rand -hex
+and you will get key similar to
+"beed354b6483c2673f026c8e0089366c9634b5608d1d9dc5a2cb0f6157bd2fcc"
 Then you copoy/paste the result inside .env file like
 JWT_SECRET_KEY = "resulting_key_from_terminal_goes_here"
+e.g.
+
+JWT_SECRET_KEY = "beed354b6483c2673f026c8e0089366c9634b5608d1d9dc5a2cb0f6157bd2fcc"
 
 """
 
