@@ -36,9 +36,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 """
-These variables below needs to change and stored in .env file
+These variables below needs to be changed and stored in .env file
 and .env should be in .gitignore list so they are not checked into git
-Then they could be loaded with the code below:
+Then the variables could be loaded into app with the code below:
 import os
 from dotenv import load_dotenv
 load_dotenv()
