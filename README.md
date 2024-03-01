@@ -1,23 +1,23 @@
-First you need to open your terminal and create project folder
+First you need to open your terminal and create project folder.
 ```py
 mkdir flask_login
 ```
 
-then cd to the directory
+then cd to the directory.
 ```
 cd flask_login
 ````
-then create your virtual environment
+then create your virtual environment.
 ```
 python3 -m venv env
 ```
 
-then if you are using vs code start it by typing ```code .```into command line
+then if you are using vs code start it by typing ```code .```into command line.
 
-I used factory pattern since circular imports can be problematic as the app grows
+I used factory pattern since circular imports can be problematic as the app grows.
 A better approach would be creating another file called factory and putting the create_app() and configurations inside that folder.
-You can use the same approach with any kind of sql database by changing SQLALCHEMY_DATABASE_URI
-We have a simple db, app and model
+You can use the same approach with any kind of sql database by changing SQLALCHEMY_DATABASE_URI.
+We have a simple db, app and model.
 
 I have added requirements text but you can just install flask, flask_sqlalchemy, flask_bcrypt by using at terminal inside project folder after you created your virtual anvironment.
 ```py
