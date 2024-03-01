@@ -3,7 +3,7 @@ First you need to open your terminal and create project folder.
 mkdir flask_login
 ```
 
-then cd to the directory.
+then cd to the created directory.
 ```
 cd flask_login
 ````
@@ -12,9 +12,14 @@ then create your virtual environment.
 python3 -m venv env
 ```
 
-then if you are using vs code start it by typing ```code .```into command line.
+then if you are using vs code start it by typing
+```py
+code .
+```
+into command line.
 
-I used factory pattern since circular imports can be problematic as the app grows.
+I used factory pattern and put app instatiation inside a function since circular imports can be problematic as the app grows.
+Just be careful not to put sqlalchemy instantiation inside the function.
 A better approach would be creating another file called factory and putting the create_app() and configurations inside that folder.
 You can use the same approach with any kind of sql database by changing SQLALCHEMY_DATABASE_URI.
 We have a simple db, app and model.
@@ -36,9 +41,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 """
-These variables below needs to be changed and stored in .env file
-and .env should be in .gitignore list so they are not checked into git
-Then the variables could be loaded into app with the code below:
+These variables below need to be changed and stored in .env file.
+The .env file should be in .gitignore list so it is not checked into git.
+Then the variables could be loaded into app with the code below and kept secure inside .env:
 
 import os
 from dotenv import load_dotenv
@@ -46,12 +51,12 @@ load_dotenv()
 
 To create your own JWT_SECRET_KEY you can open up terminal and type ..
 openssl rand -hex
-and you will get key similar to
+and you will get a key similar to
 "beed354b6483c2673f026c8e0089366c9634b5608d1d9dc5a2cb0f6157bd2fcc"
-Then you copoy/paste the result inside .env file like
+Then you copy/paste the result inside .env file like
 JWT_SECRET_KEY = "resulting_key_from_terminal_goes_here"
-e.g.
 
+e.g.
 JWT_SECRET_KEY = "beed354b6483c2673f026c8e0089366c9634b5608d1d9dc5a2cb0f6157bd2fcc"
 
 """
@@ -63,7 +68,7 @@ REFRESH_TOKEN_EXPIRE_MINUTES = "43200"
 JWT_SECRET_KEY = "my_super_secret_key"
 ALGORITHM = "HS256"
 
-my_db_name = "flask_login_example"
+my_db_name = "flask_login_example_db"
 
 
 db = SQLAlchemy()
