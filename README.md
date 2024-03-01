@@ -172,7 +172,8 @@ def token_required(f):
         try:
             data = jwt.decode(token, JWT_SECRET_KEY, algorithms=[ALGORITHM])
             current_user = User.query.filter_by(UserId=data["id"]).first()
-            """included scopes in case you may need to use it for bigger apps, if not skip/exclude the scope part up to exceptions"""
+            """included scopes in case you may need to use it for bigger apps,
+               if not skip/exclude the scope part up to exceptions"""
             for scope in data["scopes"]:
                 if scope=="user" not in data["scopes"]:
                     return make_response({"message": "Unable to verify token!"}, 401)
